@@ -5,15 +5,16 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 SetTitleMatchMode, 2
 DetectHiddenText ON
 
-debugMessages := false
-
+enableDebug := false
 
 `::Suspend
 
+;; kill the script with F4 key
 F4::
 	Stopped := 1
 return
 
+;; start the script with F3 key
 F3::
 	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	;; here are your config options to toggle certain keystrokes or functions ;;
@@ -122,9 +123,12 @@ F3::
 			sendString = %sendString%s
 			SCount = 0
 		}
-
-		;debug(sendString, true)
-		send, %sendString%
+		
+		if(enableDebug = true){
+			debug(sendString, true, "Key string to send: ")
+		} else {
+			send, %sendString%
+		}
 
 		SCount += 1
 		DCount += 1 
@@ -137,40 +141,9 @@ F3::
 	}
 return
 
-F9::
-	Stopped := 0
-	Loop
-	{
-		MouseClick, Right
-		Sleep, 20
-		if (Stopped = 1){
-			break
-		}
-	}
-return
-
-F2::
-
-	WinGet, list, List, ahk_exe Chrome.exe
-	Loop %list% {
-		hwnd := list%A_Index%	; handles are in variables list1, list2, list3 etc. up to list%list%
-		MsgBox % hwnd
-		SetTitleMatchMode, 2
-		;WinActivate, ahk_id %hwnd%
-		Loop, 2s { ; max number of tabs
-			WinGetTitle, WLName, ahk_id %hwnd% ;
-			if(InStr(WLName, "Play Antimatter Dimensions")>0){
-				send, m
-			}
-			;MsgBox % WLName
-			Send ^{Tab}
-			Sleep, 20
-		}
-	}
-return
-
-debug(msg, override := false){
-	if (debugMessages = true || override = true){
-		MsgBox % msg
+;; supporting functions
+debug(msg, override := false, prepend:= "Debug: "){
+	if (enableDebug = true || override = true){
+		MsgBox % prepend msg
 	}
 }
