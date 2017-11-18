@@ -93,6 +93,10 @@ F3::
 		}
 		
 		;; add non-offset hotkeys
+		if (doCrunch = true) {
+			debug("crunching")
+			sendString = %sendString%c
+		}
 		if (doDBoosts = true && offsetD = false){
 			debug("d shift or boosting")
 			sendString = %sendString%d
@@ -104,10 +108,6 @@ F3::
 		if (doGalaxies = true){
 			debug("buying galaxy")
 			sendString = %sendString%g
-		}
-		if (doCrunch = true) {
-			debug("crunching")
-			sendString = %sendString%c
 		}
 
 		; set and send occasional dim boost every x loops
