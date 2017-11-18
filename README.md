@@ -1,7 +1,13 @@
 AutoHotKey Scripts
 By Josh Moore
 
-Antimatter Dimensions
+Antimatter Dimensions:
+https://www.kongregate.com/games/Hevipelle/antimatter-dimensions?acomplete=antimatter
+
+Donate link for the original game developer (do it!):
+https://ivark.github.io/about.html
+
+This script:
 https://github.com/melophat/autoHotKeyScripts/blob/master/antimatter_dimensions.ahk
 
 This script is used to automate the game Antimatter Dimensions to allow you to get through it a lot quicker than doing it manually.  It includes a decent amount of configurable options, along with some sanity checks to make sure that you don't enable conflicting options for hotkeys, etc.  As the game developer (not me) adds features or makes more hotkeys available, I'll do my best to update this script.  I make no guarantees about the frequency of updates or bug fixes, especially once I get bored of the game, lol.
