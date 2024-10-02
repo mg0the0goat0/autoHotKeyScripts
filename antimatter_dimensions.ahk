@@ -20,23 +20,23 @@ F3::
 	;; here are your config options to toggle certain keystrokes or functions ;;
 	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	
-	useMaxAll := true
+	useMaxAll := false
 
 	;; all individual dims are ignored if useMaxAll is true
-	d1 := false
-	d2 := false
-	d3 := false
-	d4 := false
-	d5 := false
-	d6 := false
-	d7 := false
-	d8 := false
+	d1 := true
+	d2 := true
+	d3 := true
+	d4 := true
+	d5 := true
+	d6 := true
+	d7 := true
+	d8 := true
 
 
-	doSacrifices := true
+	doSacrifices := false
 	doGalaxies := true
-	doDBoosts := true
-	doCrunch := true
+	doDBoosts := false
+	doCrunch := false
 
 	;; if offsetS is true, it will only send the sacrifice key on loops that are multiples of sOffsetValue
 	offsetS := false
